@@ -289,7 +289,7 @@ async function detectKeyColor(inputPath: string): Promise<string> {
 }
 
 async function removeBackground(inputPath: string): Promise<string> {
-  const dir = inputPath.substring(0, inputPath.lastIndexOf("/"));
+  const dir = dirname(inputPath);
   const name = basename(inputPath, extname(inputPath));
   const outputPath = join(dir, `${name}.png`);
   const tempKeyed = join(dir, `${name}_keyed.png`);
